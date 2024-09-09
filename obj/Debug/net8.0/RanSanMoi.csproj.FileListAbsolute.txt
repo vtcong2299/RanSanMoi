@@ -12,3 +12,4 @@ C:\Users\admin\Documents\HocLapTrinh\LapTrinhGameUnity\CongTapCode\C#\BaiTapCode
 C:\Users\admin\Documents\HocLapTrinh\LapTrinhGameUnity\CongTapCode\C#\BaiTapCodeGym\RanSanMoi\obj\Debug\net8.0\RanSanMoi.pdb
 C:\Users\admin\Documents\HocLapTrinh\LapTrinhGameUnity\CongTapCode\C#\BaiTapCodeGym\RanSanMoi\obj\Debug\net8.0\RanSanMoi.genruntimeconfig.cache
 C:\Users\admin\Documents\HocLapTrinh\LapTrinhGameUnity\CongTapCode\C#\BaiTapCodeGym\RanSanMoi\obj\Debug\net8.0\ref\RanSanMoi.dll
+C:\Users\admin\Documents\HocLapTrinh\LapTrinhGameUnity\CongTapCode\C#\BaiTapCodeGym\RanSanMoi\obj\Debug\net8.0\RanSanMoi.sourcelink.json
