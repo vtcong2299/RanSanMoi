@@ -10,28 +10,44 @@ namespace RanSanMoi
     {
         public static Random rand = new Random();
         public static (int, int) food;
-        public static (int, int) superFood;        
+        public static (int, int) superFood;
         //Tạo mồi nhỏ ở vị trí ngẫu nhiên
         public static void Food()
         {
-            int x,y;
-            do
+            try
             {
-                y= rand.Next(1,SnakeControl.width-1);
-                x= rand.Next(1,SnakeControl.height -1);
-            }while(SnakeControl.snake.Contains((y,x)));
-            food=(y,x);
+                SnakeControl snakeControl = new SnakeControl();
+                int x, y;
+                do
+                {
+                    y = rand.Next(1, snakeControl.width - 1);
+                    x = rand.Next(1, snakeControl.height - 1);
+                } while (SnakeControl.snake.Contains((y, x)));
+                {food = (y, x);}
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Loi o phuong thuc Food()"+ ex);
+            }
         }
-        //Tạo mồi lớn ở vị trí ngẫu nhiên
+        //Tạo mồi Đặc Biệt ở vị trí ngẫu nhiên
         public static void SuperFood()
         {
-            int x,y;
-            do
+            try
             {
-                y= rand.Next(1,SnakeControl.width-1);
-                x= rand.Next(1,SnakeControl.height -1);
-            }while(SnakeControl.snake.Contains((y,x))&&food!=((y,x)));
-            superFood=(y,x);
-        }         
-    }    
+                SnakeControl snakeControl = new SnakeControl();
+                int x, y;
+                do
+                {
+                    y = rand.Next(1, snakeControl.width - 1);
+                    x = rand.Next(1, snakeControl.height - 1);
+                } while (SnakeControl.snake.Contains((y, x)) || food == ((y, x)));
+                superFood = (y, x);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Loi o phuong thuc SuperFood()"+ ex);
+            }
+        }
+    }
 }

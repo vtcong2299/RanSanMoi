@@ -14,7 +14,8 @@
 //     }
 //     public class SnakeControl
 //     {
-//         public static Point food = new Point(8, 8);
+//         public Point food = new Point(8, 8);
+        
 //         public static bool foodExist = false;
 //         public static int speed = 500;
 //         public static int row = 20;
@@ -30,6 +31,7 @@
 //         // ve cac doi tuong tren ban do (bien, ran, moi)
 //         public static void Drawboard()
 //         {
+//             SnakeControl snakeControl = new SnakeControl();
 //             Console.Clear();
 //             for (int i = 0; i < row; i++)
 //             {
@@ -41,7 +43,7 @@
 //                     }
 //                     else if (i == _head.X && j == _head.Y)
 //                     {
-//                         board[i, j] = "*";
+//                         board[i, j] = "@";
 //                     }
 //                     else
 //                     {
@@ -50,16 +52,16 @@
 //                         {
 //                             if (i == body[count].X && j == body[count].Y)
 //                             {
-//                                 board[i, j] = "+";
+//                                 board[i, j] = "O";
 //                                 isBodyPart = true;
 //                                 break;
 //                             }
 //                         }
 //                         if (!isBodyPart)
 //                         {
-//                             if (i == food.X && j == food.Y)
+//                             if (i == snakeControl.food.X && j == snakeControl.food.Y)
 //                             {
-//                                 board[i, j] = "@";
+//                                 board[i, j] = "X";
 //                             }
 //                             else
 //                             {
@@ -155,7 +157,8 @@
 //         // tang size cua mang, khoi tao nut moi
 //         public static void EatFood()
 //         {
-//             if (_head.X == food.X && _head.Y == food.Y)
+//             SnakeControl snakeControl = new SnakeControl();
+//             if (_head.X == snakeControl.food.X && _head.Y == snakeControl.food.Y)
 //             {
 //                 score += 1;
 //                 Array.Resize(ref body, body.Length + 1);
@@ -179,6 +182,7 @@
 //         }
 //         public static void PopUpfood()
 //         {
+//             SnakeControl snakeControl = new SnakeControl();
 //             Random random = new Random();
 //             int x = random.Next(1, row - 1);
 //             int y = random.Next(1, col - 1);
@@ -186,8 +190,8 @@
 //             {
 //                 if (foodExist == false)
 //                 {
-//                     food.X = x;
-//                     food.Y = y;
+//                     snakeControl.food.X = x;
+//                     snakeControl.food.Y = y;
 //                     foodExist = true;
 //                 }
 //             }
@@ -203,6 +207,7 @@
 //     {
 //         static void Main(string[] args)
 //         {
+//             SnakeControl snakeControl = new SnakeControl();
 //             Thread _game = new Thread(SnakeControl.ListenKey);
 //             _game.Start();
 //             while (true)
