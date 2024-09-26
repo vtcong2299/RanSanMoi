@@ -29,6 +29,7 @@ namespace RanSanMoi
                     gameSystem.ShowScore();
                     if (snakeControl.isDeal==true)
                     {
+                        Task.Delay(1200).Wait();
                         gameSystem.GameOver();
                     }
                     Task.Delay(snakeControl.speed).Wait();
